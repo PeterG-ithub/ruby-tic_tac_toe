@@ -48,7 +48,21 @@ class Board
     draw_board(@input)
   end
 
-  def isWinner?
+  def is_winner?
+    input.any? { |row| row.uniq.size == 1 && row[0] != ' ' } ||
+      input.transpose.any? { |col| col.uniq.size == 1 && col[0] != ' ' } ||
+      is_diagonal?
+  end
+
+  def is_diagonal?
+    left_diagonal = [input[0][0], input[1][1], input[2][2]]
+    right_diagonal = [input[0][2], input[1][1], input[2][0]]
+
+    [left_diagonal, right_diagonal].any? { |diag| diag.uniq.size == 1 && diag[0] != ' ' }
+  end
+
+  def is_draw?
+    input.all? { |row| !row.include?(' ') }
   end
 end
 
@@ -199,15 +213,17 @@ class Game
       print "#{player_one.name}'s turn: "
       player1_input = validate_input(gets.chomp, board)
       board.input_logic(player1_input.to_s, player_one.player_number)
-      if(board.isWinner?)
+      if board.is_winner?
         puts "#{player_one.name} Wins!"
+        quit
+      elsif board.is_draw?
+        puts "Its a draw!"
         quit
       end
       print "#{player_two.name}'s turn: "
       player2_input = validate_input(gets.chomp, board)
       board.input_logic(player2_input.to_s, player_two.player_number)
-      board.isWinner?
-      if(board.isWinner?)
+      if board.is_winner?
         puts "#{player_two.name} Wins!"
         quit
       end
@@ -225,11 +241,10 @@ class Game
       if arr.include?(string)
         input_arr = input_mapping[string]
         row, col = input_arr
-        if board.input[row][col] == '✖' || board.input[row][col] == '●'
-          puts 'There is something already there :)'
-        else
-          return string
-        end
+        return string unless board.input[row][col] == '✖' || board.input[row][col] == '●'
+
+        puts 'There is something already there :)'
+
       end
       puts 'Please use the following inputs: a1, a2, a3, b1, b2, b3, c1, c2, c3'
       string = gets.chomp
