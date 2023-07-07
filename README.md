@@ -1,4 +1,4 @@
-# Tic Tac Toe (Ruby) (WIP)
+# Tic Tac Toe (Ruby)
 
 A command-line Tic Tac Toe game written in Ruby. This project is part of [The Odin Project](https://www.theodinproject.com/lessons/ruby-tic-tac-toe) curriculum.
 
@@ -12,6 +12,7 @@ This is a simple Tic Tac Toe game implemented in Ruby. It allows two players to 
 - The game displays the board after each move.
 - It validates and handles invalid moves.
 - It checks for a winner or a draw and declares the result.
+- Option to fight AI (WIP)
 
 ## Credits
 
