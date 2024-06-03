@@ -25,7 +25,7 @@ This is a simple Tic Tac Toe game implemented in Ruby. It allows two players to 
 3. Navigate to the directory where you cloned the repository.
     ```bash
         cd tic-tac-toe
-4. Run `main.rb` to start the game.
+4. Run main.rb to start the game.
     ```bash
         ruby main.rb
 
@@ -35,8 +35,9 @@ This is a simple Tic Tac Toe game implemented in Ruby. It allows two players to 
 2. Ensure you have Ruby installed by running `ruby --version`. 
     ```bash
         ruby --version
+
 If not, install Ruby using your package manager.
-    ```bash
+
         sudo apt update
         sudo apt-get install ruby-full
 
@@ -46,13 +47,13 @@ If not, install Ruby using your package manager.
 4. Navigate to the directory where you cloned the repository.
     ```bash
         cd tic-tac-toe
-5. Run `main.rb` to start the game.
+5. Run main.rb to start the game.
     ```bash
         ruby main.rb
 
 ## Credits
 
-These Ruby practice exercises are part of the curriculum provided by [The Odin Project](https://www.theodinproject.com/), an open-source online platform that offers free resources to learn web development.
+These Ruby practice exercises are part of the curriculum provided by The Odin Project, an open-source online platform that offers free resources to learn web development.
 - Website: [The Odin Project](https://www.theodinproject.com/)
 - Ruby Course: [Ruby](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby)
 - TicTacToe lesson: [TicTacToe](https://www.theodinproject.com/lessons/ruby-tic-tac-toe)
